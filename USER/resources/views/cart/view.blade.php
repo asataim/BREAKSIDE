@@ -4,7 +4,7 @@
 <div class="container mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-8">
         <h1 class="text-2xl font-bold">Shopping Cart</h1>
-        <a href="{{ route('user.dashboard') }}" class="text-custom-red hover:text-red-700">Continue Shopping</a>
+        <a href="{{ route('dashboard') }}" class="text-custom-red hover:text-red-700">Continue Shopping</a>
     </div>
 
     @if(Cart::count() > 0)

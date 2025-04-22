@@ -33,7 +33,7 @@
                         <div class="flex">
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
-                                <a href="{{ auth()->user()->isAdmin() ? route('admin.dashboard') : route('user.dashboard') }}" class="flex items-center">
+                                <a href="{{ route('dashboard') }}" class="flex items-center">
                                     <img src="{{ asset('images/logo.png') }}" alt="BreakSide Logo" class="h-8 w-auto">
                                     <span class="ml-2 text-xl font-bold text-custom-red">BreakSide</span>
                                 </a>
@@ -42,21 +42,12 @@
 
                         <!-- Navigation Links -->
                         <div class="flex items-center">
-                            @if(auth()->user()->isAdmin())
-                                <a href="{{ route('admin.dashboard') }}" class="text-gray-300 hover:text-custom-red px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
-                                    Dashboard
-                                </a>
-                                <a href="{{ route('admin.orders.index') }}" class="text-gray-300 hover:text-custom-red px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
-                                    Orders
-                                </a>
-                            @else
-                                <a href="{{ route('user.dashboard') }}" class="text-gray-300 hover:text-custom-red px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
-                                    Products
-                                </a>
-                                <a href="{{ route('cart.view') }}" class="text-gray-300 hover:text-custom-red px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
-                                    Cart
-                                </a>
-                            @endif
+                            <a href="{{ route('dashboard') }}" class="text-gray-300 hover:text-custom-red px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
+                                Products
+                            </a>
+                            <a href="{{ route('cart.view') }}" class="text-gray-300 hover:text-custom-red px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">
+                                Cart
+                            </a>
                             
                             <!-- Logout Form -->
                             <form method="POST" action="{{ route('logout') }}" class="ml-4">

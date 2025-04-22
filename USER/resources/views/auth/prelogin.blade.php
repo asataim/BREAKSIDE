@@ -27,17 +27,17 @@
 
         <div class="bg-custom-gray shadow-lg rounded-lg p-8">
             <div class="space-y-4">
-                <a href="{{ route('login') }}" class="block w-full bg-custom-red text-white text-center px-4 py-3 rounded hover:bg-red-700 transition-colors duration-300">
+                <a href="/login" class="block w-full bg-custom-red text-white text-center px-4 py-3 rounded hover:bg-red-700 transition-colors duration-300">
                     Login
                 </a>
-                <a href="{{ route('register') }}" class="block w-full bg-gray-700 text-white text-center px-4 py-3 rounded hover:bg-gray-600 transition-colors duration-300">
+                <a href="/register" class="block w-full bg-gray-700 text-white text-center px-4 py-3 rounded hover:bg-gray-600 transition-colors duration-300">
                     Register
                 </a>
             </div>
 
             <div class="mt-8 text-center">
                 <p class="text-gray-400">Or continue as</p>
-                <a href="{{ route('user.dashboard') }}" class="inline-block mt-4 text-custom-red hover:text-red-700">
+                <a href="/dashboard" class="inline-block mt-4 text-custom-red hover:text-red-700">
                     Guest
                 </a>
             </div>

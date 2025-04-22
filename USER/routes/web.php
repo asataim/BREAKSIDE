@@ -29,7 +29,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Protected Routes (Require Authentication)
 Route::middleware(['auth'])->group(function () {
     // User Routes
-    Route::get('/user/dashboard', [ProductController::class, 'index'])->name('user.dashboard');
+    Route::get('/dashboard', [ProductController::class, 'index'])->name('dashboard');
     
     // Cart Routes
     Route::get('/cart', [CartController::class, 'view'])->name('cart.view');
@@ -41,13 +41,4 @@ Route::middleware(['auth'])->group(function () {
     // Checkout Routes
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
     Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
-
-    // Admin Routes
-    Route::prefix('admin')->name('admin.')->group(function () {
-        Route::get('/dashboard', [ProductController::class, 'adminIndex'])->name('dashboard');
-        Route::resource('products', ProductController::class)->except(['show']);
-        Route::get('/orders', [App\Http\Controllers\Admin\OrderController::class, 'index'])->name('orders.index');
-        Route::get('/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'show'])->name('orders.show');
-        Route::put('/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'update'])->name('orders.update');
-    });
 });

@@ -66,7 +66,7 @@
         </div>
 
         <div class="mt-6">
-            <a href="{{ route('user.dashboard') }}" class="bg-custom-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors duration-300">
+            <a href="{{ route('dashboard') }}" class="bg-custom-red text-white px-4 py-2 rounded hover:bg-red-700 transition-colors duration-300">
                 Back to Products
             </a>
         </div>
