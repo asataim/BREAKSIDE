@@ -24,7 +24,7 @@ Route::middleware(['guest'])->group(function () {
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Admin Routes
-Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [ProductController::class, 'adminIndex'])->name('dashboard');
     Route::resource('products', ProductController::class)->except(['show']);
     Route::get('/orders', [App\Http\Controllers\Admin\OrderController::class, 'index'])->name('orders.index');
